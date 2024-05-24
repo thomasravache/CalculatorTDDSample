@@ -122,6 +122,30 @@ public class CalculatorTests
         Assert.Equal(expectedResult, result);
     }
 
+    [Theory(DisplayName = "Given Multiple Positive Numbers Or Empty Args When Multiplicate Then Success")]
+    [InlineData(new double[] { 2, 5 })]
+    [InlineData(new double[] { 5, 2 })]
+    [InlineData(new double[] { 2, 2.5, 2 })]
+    [InlineData(new double[] { 2, 0, 2 })]
+    [InlineData(new double[] { 2, 6 })]
+    [InlineData(new double[] { })]
+    public void Given_Multiple_Positive_Numbers_Or_Empty_Args_When_Multiplicate_Then_Success(double[] multiplicateArgs)
+    {
+        // Arrange
+        double expectedResult = 1;
+
+        if (multiplicateArgs.Any())
+            foreach(double multiplicateArg in multiplicateArgs) expectedResult *= multiplicateArg;
+        else
+            expectedResult = 0;
+
+        // Act
+        double result = _calculator.Multiplicate(multiplicateArgs);
+
+        // Assert
+        Assert.Equal(expectedResult, result);
+    }
+
     [Fact(DisplayName = "Given Any Negative Number When Multiplicate Then Throw NegativeNumberNotAllowedException")]
     public void Given_Any_Negative_Number_When_Multiplicate_Then_Throw_NegativeNumberNotAllowedException()
     {
