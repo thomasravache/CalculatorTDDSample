@@ -35,6 +35,20 @@ public class CalculatorTests
         Assert.Equal(expectedResult, result);
     }
 
+    [Fact(DisplayName = "Given Empty Args When Sum Then Return Zero")]
+    public void Given_Empty_Args_When_Sum_Then_Return_Zero()
+    {
+        // Arrange
+        double expectedResult = 0;
+        double[] sumArgsEmpty = new double[] { };
+
+        // Act
+        double result = _calculator.Sum(sumArgsEmpty);
+
+        // Assert
+        Assert.Equal(expectedResult, result);
+    }
+
     #endregion
 
     #region Method Subtract
@@ -120,6 +134,20 @@ public class CalculatorTests
 
         // Assert
         Assert.Equal(expectedErrorMessage, exception.Message);
+    }
+
+    [Fact(DisplayName = "Given Empty Args When Multiplicate Then Return Zero")]
+    public void Given_Empty_Args_When_Multiplicate_Then_Return_Zero()
+    {
+        // Arrange
+        double expectedResult = 0;
+        double[] multiplicateArgsEmpty = new double[] { };
+
+        // Act
+        double result = _calculator.Multiplicate(multiplicateArgsEmpty);
+
+        // Assert
+        Assert.Equal(expectedResult, result);
     }
 
     #endregion

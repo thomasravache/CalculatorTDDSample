@@ -17,6 +17,8 @@ public class Calculator : ICalculator
     {
         ValidateMultiplicate(args);
 
+        if (!args.Any()) return 0;
+
         double result = 1;
 
         foreach (var arg in args) result *= arg;
