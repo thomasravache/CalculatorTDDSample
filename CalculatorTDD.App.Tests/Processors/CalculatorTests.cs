@@ -12,6 +12,8 @@ public class CalculatorTests
         _calculator = new Calculator();
     }
 
+    #region Method Sum
+
     [Theory(DisplayName = "Given Multiple Numbers When Sum Then Success")]
     [InlineData(new double[] { 5, 5 })]
     [InlineData(new double[] { 6, 4 })]
@@ -32,6 +34,9 @@ public class CalculatorTests
         Assert.Equal(expectedResult, result);
     }
 
+    #endregion
+
+    #region Method Subtract
 
     [Fact(DisplayName = "Given Numbers When Subtract Then Success")]
     public void Given_Numbers_When_Subtract_Then_Success()
@@ -47,6 +52,10 @@ public class CalculatorTests
         // Assert
         Assert.Equal(expectedResult, result);
     }
+
+    #endregion
+
+    #region Method Divide
 
     [Fact(DisplayName = "Given Dividend And Divisor When Divide Then Success")]
     public void Given_Dividend_And_Divisor_When_Divide_Then_Success()
@@ -78,6 +87,10 @@ public class CalculatorTests
         Assert.Equal(expectedErrorMessage, exception.Message);
     }
 
+    #endregion
+
+    #region Method Multiplicate
+
     [Theory(DisplayName = "Given Multiple Positive Numbers When Multiplicate Then Success")]
     [InlineData(new double[] { 2, 5 })]
     [InlineData(new double[] { 5, 2 })]
@@ -107,4 +120,6 @@ public class CalculatorTests
         // Assert
         Assert.Equal(expectedErrorMessage, exception.Message);
     }
+
+    #endregion
 }
