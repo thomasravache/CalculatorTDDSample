@@ -7,6 +7,7 @@ namespace CalculatorTDD.App.Tests.Processors;
 public class CalculatorTests
 {
     private readonly ICalculator _calculator;
+
     public CalculatorTests()
     {
         _calculator = new Calculator();
